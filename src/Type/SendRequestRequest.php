@@ -21,7 +21,7 @@ class SendRequestRequest implements RequestInterface
     private ?\App\Type\AttachmentContentList $AttachmentContentList;
 
     /**
-     * ЭП-ОВ или ЭП-ПГУ. Подписан элемент //SenderProvidedRequestData.
+     *  ЭП-ОВ или ЭП-ПГУ. Подписан элемент //SenderProvidedRequestData.
      *  Подпись оставлена необязательной, чтобы клиентов можно было тестировать с упрощёнными эмуляторами СМЭВ.
      *  Реальный СМЭВ отбивает сообщения без ЭП-ОВ или ЭП-ПГУ.
      *

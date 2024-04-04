@@ -8,8 +8,9 @@ use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\ResultInterface;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\RequestInterface;
+use SoapClient;
 
-class SmevClient
+class SmevClient extends SoapClient
 {
     /**
      * @var Caller
@@ -146,5 +147,14 @@ class SmevClient
         \Psl\Type\instance_of(\Phpro\SoapClient\Type\ResultInterface::class)->assert($response);
 
         return $response;
+    }
+
+    public function __getLastRequest()
+    {
+        return parent::__getLastRequest();
+    }
+    public function __getLastResponse()
+    {
+        return parent::__getLastResponse();
     }
 }

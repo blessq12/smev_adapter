@@ -20,18 +20,40 @@ spl_autoload_register(function ($class_name) {
         require 'src/' . $name . '.php';
 });
 
+// $client = SmevClientFactory::factory('http://smev3-n0.test.gosuslugi.ru:7500/smev/v1.2/ws?wsdl');
+
 $client = new SoapClient('http://smev3-n0.test.gosuslugi.ru:7500/smev/v1.2/ws?wsdl', ['trace' => true]);
 
 try {
-
-    $client->sendRequest([
-        'SenderProvidedRequestData' => [
-            'MessageID' => Uuid::uuid1(),
-            'MessagePrimaryContent' => [
-                'any' => ''
+    // $client->sendRequest(
+    //     new SendRequestRequest(
+    //         new SenderProvidedRequestData(
+    //             Uuid::uuid1(),
+    //             new MessagePrimaryContent(['any' => 'any content'])
+    //         ),
+    //         // new AttachmentContentList(),
+    //         null,
+    //         // new XMLDSigSignatureType()
+    //         null
+    //     )
+    // );
+    $content = new stdClass();
+    $content->any = 'Some content';
+    $client->sendRequest(
+        [
+            'SenderProvidedRequestData' => [
+                'MessageID' => Uuid::uuid1(),
+                'MessagePrimaryContent' => [
+                    'any' => [
+                        'asfafad' => 'asdasdasd',
+                        'asdasd' => 'asdasd'
+                    ],
+                ]
             ]
-        ]
-    ]);
+        ],
+        ['AttachmentContentList' => 'asdasd'],
+        ['XMLDSigSignature' => ['asdasd' => 'asdasd']]
+    );
 } catch (SoapFault $fault) {
 
     // <xmp> tag displays xml output in html

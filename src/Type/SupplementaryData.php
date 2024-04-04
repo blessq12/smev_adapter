@@ -5,7 +5,7 @@ namespace App\Type;
 class SupplementaryData
 {
     /**
-     * Тип сообщения. Вычисляется СМЭВ на основании полного имени (qualified name) корневого XML-элемента сообщения.
+     *  Тип сообщения. Вычисляется СМЭВ на основании полного имени (qualified name) корневого XML-элемента сообщения.
      *  Например, "Заявка на получение выписки из ЕГРИП".
      *  Для ответов на запросы этот элемент опускается.
      *
@@ -23,7 +23,7 @@ class SupplementaryData
     /**
      * @return null | string
      */
-    public function getDetectedContentTypeName() : ?string
+    public function getDetectedContentTypeName(): ?string
     {
         return $this->DetectedContentTypeName;
     }
@@ -32,7 +32,7 @@ class SupplementaryData
      * @param null | string $DetectedContentTypeName
      * @return static
      */
-    public function withDetectedContentTypeName(?string $DetectedContentTypeName) : static
+    public function withDetectedContentTypeName(?string $DetectedContentTypeName): static
     {
         $new = clone $this;
         $new->DetectedContentTypeName = $DetectedContentTypeName;
@@ -43,7 +43,7 @@ class SupplementaryData
     /**
      * @return 'PGU2OIV' | 'OIV2OIV' | 'OIV2sameOIV' | 'Charger2PaymentGate' | 'PaymentGate2Treasury' | 'OIV2Treasury' | 'other' | 'NotDetected'
      */
-    public function getInteractionType() : string
+    public function getInteractionType(): string
     {
         return $this->InteractionType;
     }
@@ -52,7 +52,7 @@ class SupplementaryData
      * @param 'PGU2OIV' | 'OIV2OIV' | 'OIV2sameOIV' | 'Charger2PaymentGate' | 'PaymentGate2Treasury' | 'OIV2Treasury' | 'other' | 'NotDetected' $InteractionType
      * @return static
      */
-    public function withInteractionType(string $InteractionType) : static
+    public function withInteractionType(string $InteractionType): static
     {
         $new = clone $this;
         $new->InteractionType = $InteractionType;
@@ -60,4 +60,3 @@ class SupplementaryData
         return $new;
     }
 }
-
