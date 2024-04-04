@@ -36,8 +36,11 @@ class SendRequestRequest implements RequestInterface
      * @param null | \App\Type\AttachmentContentList $AttachmentContentList
      * @param null | \App\Type\XMLDSigSignatureType $CallerInformationSystemSignature
      */
-    public function __construct(\App\Type\SenderProvidedRequestData $SenderProvidedRequestData, ?\App\Type\AttachmentContentList $AttachmentContentList, ?\App\Type\XMLDSigSignatureType $CallerInformationSystemSignature)
-    {
+    public function __construct(
+        \App\Type\SenderProvidedRequestData $SenderProvidedRequestData,
+        ?\App\Type\AttachmentContentList $AttachmentContentList,
+        ?\App\Type\XMLDSigSignatureType $CallerInformationSystemSignature,
+    ) {
         $this->SenderProvidedRequestData = $SenderProvidedRequestData;
         $this->AttachmentContentList = $AttachmentContentList;
         $this->CallerInformationSystemSignature = $CallerInformationSystemSignature;
@@ -46,7 +49,7 @@ class SendRequestRequest implements RequestInterface
     /**
      * @return \App\Type\SenderProvidedRequestData
      */
-    public function getSenderProvidedRequestData() : \App\Type\SenderProvidedRequestData
+    public function getSenderProvidedRequestData(): \App\Type\SenderProvidedRequestData
     {
         return $this->SenderProvidedRequestData;
     }
@@ -55,7 +58,7 @@ class SendRequestRequest implements RequestInterface
      * @param \App\Type\SenderProvidedRequestData $SenderProvidedRequestData
      * @return static
      */
-    public function withSenderProvidedRequestData(\App\Type\SenderProvidedRequestData $SenderProvidedRequestData) : static
+    public function withSenderProvidedRequestData(\App\Type\SenderProvidedRequestData $SenderProvidedRequestData): static
     {
         $new = clone $this;
         $new->SenderProvidedRequestData = $SenderProvidedRequestData;
@@ -66,7 +69,7 @@ class SendRequestRequest implements RequestInterface
     /**
      * @return null | \App\Type\AttachmentContentList
      */
-    public function getAttachmentContentList() : ?\App\Type\AttachmentContentList
+    public function getAttachmentContentList(): ?\App\Type\AttachmentContentList
     {
         return $this->AttachmentContentList;
     }
@@ -75,7 +78,7 @@ class SendRequestRequest implements RequestInterface
      * @param null | \App\Type\AttachmentContentList $AttachmentContentList
      * @return static
      */
-    public function withAttachmentContentList(?\App\Type\AttachmentContentList $AttachmentContentList) : static
+    public function withAttachmentContentList(?\App\Type\AttachmentContentList $AttachmentContentList): static
     {
         $new = clone $this;
         $new->AttachmentContentList = $AttachmentContentList;
@@ -86,7 +89,7 @@ class SendRequestRequest implements RequestInterface
     /**
      * @return null | \App\Type\XMLDSigSignatureType
      */
-    public function getCallerInformationSystemSignature() : ?\App\Type\XMLDSigSignatureType
+    public function getCallerInformationSystemSignature(): ?\App\Type\XMLDSigSignatureType
     {
         return $this->CallerInformationSystemSignature;
     }
@@ -95,7 +98,7 @@ class SendRequestRequest implements RequestInterface
      * @param null | \App\Type\XMLDSigSignatureType $CallerInformationSystemSignature
      * @return static
      */
-    public function withCallerInformationSystemSignature(?\App\Type\XMLDSigSignatureType $CallerInformationSystemSignature) : static
+    public function withCallerInformationSystemSignature(?\App\Type\XMLDSigSignatureType $CallerInformationSystemSignature): static
     {
         $new = clone $this;
         $new->CallerInformationSystemSignature = $CallerInformationSystemSignature;
@@ -103,4 +106,3 @@ class SendRequestRequest implements RequestInterface
         return $new;
     }
 }
-
