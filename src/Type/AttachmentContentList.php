@@ -11,6 +11,8 @@ class AttachmentContentList
      * @var array<int<1,max>, \App\Type\AttachmentContentType>
      */
     private array $AttachmentContent;
+    private $any;
+
 
     /**
      * @return array<int<1,max>, \App\Type\AttachmentContentType>
@@ -20,10 +22,12 @@ class AttachmentContentList
         return $this->AttachmentContent;
     }
 
-    public function __construct(array $AttachmentContent)
+    public function __construct(mixed $attachment, mixed $any)
     {
-        $this->AttachmentContent = $AttachmentContent;
+        $this->AttachmentContent[] = $attachment;
+        $this->any = $any;
     }
+
 
     /**
      * @param array<int<1,max>, \App\Type\AttachmentContentType> $AttachmentContent

@@ -14,10 +14,18 @@ class AttachmentContentType
      */
     private mixed $Content;
 
+
+    public function __construct(
+        string $id,
+        mixed $content
+    ) {
+        $this->Id = $id;
+        $this->Content = $content;
+    }
     /**
      * @return string
      */
-    public function getId() : string
+    public function getId(): string
     {
         return $this->Id;
     }
@@ -26,7 +34,7 @@ class AttachmentContentType
      * @param string $Id
      * @return static
      */
-    public function withId(string $Id) : static
+    public function withId(string $Id): static
     {
         $new = clone $this;
         $new->Id = $Id;
@@ -37,7 +45,7 @@ class AttachmentContentType
     /**
      * @return mixed
      */
-    public function getContent() : mixed
+    public function getContent(): mixed
     {
         return $this->Content;
     }
@@ -46,7 +54,7 @@ class AttachmentContentType
      * @param mixed $Content
      * @return static
      */
-    public function withContent(mixed $Content) : static
+    public function withContent(mixed $Content): static
     {
         $new = clone $this;
         $new->Content = $Content;
@@ -54,4 +62,3 @@ class AttachmentContentType
         return $new;
     }
 }
-
