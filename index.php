@@ -20,16 +20,13 @@ spl_autoload_register(function ($class_name) {
         require 'src/' . $name . '.php';
 });
 
-
-
-
 $client = new SoapClient('http://smev3-n0.test.gosuslugi.ru:7500/smev/v1.2/ws?wsdl', ['trace' => true]);
 
 try {
 
     $client->sendRequest([
         'SenderProvidedRequestData' => [
-            'MessageID' => 'asdjksdf4355445',
+            'MessageID' => Uuid::uuid1(),
             'MessagePrimaryContent' => [
                 'any' => ''
             ]
