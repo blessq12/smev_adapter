@@ -1,13 +1,13 @@
 {
-    "require": {
-        "phpro/soap-client": "^3.1",
-        "symfony/http-client": "^7.0",
-        "nyholm/psr7": "^1.8",
-        "ramsey/uuid": "^4.7"
-    },
-    "config": {
-        "allow-plugins": {
-            "php-http/discovery": true
-        }
-    }
+	"require": {
+		"phpro/soap-client": "^3.1",
+		"symfony/http-client": "^7.0",
+		"nyholm/psr7": "^1.8",
+		"ramsey/uuid": "^4.7"
+	},
+	"config": {
+		"allow-plugins": {
+			"php-http/discovery": true
+		}
+	}
 }
