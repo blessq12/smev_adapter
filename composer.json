@@ -3,7 +3,8 @@
 		"phpro/soap-client": "^3.1",
 		"symfony/http-client": "^7.0",
 		"nyholm/psr7": "^1.8",
-		"ramsey/uuid": "^4.7"
+		"ramsey/uuid": "^4.7",
+		"jenssegers/blade": "^2.0"
 	},
 	"config": {
 		"allow-plugins": {
