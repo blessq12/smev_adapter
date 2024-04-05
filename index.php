@@ -25,12 +25,17 @@ spl_autoload_register(function ($class_name) {
 $client = new SoapClient('http://smev3-n0.test.gosuslugi.ru:7500/smev/v1.2/ws?wsdl', ['trace' => true]);
 
 try {
-
     $client->sendRequest([
         'SenderProvidedRequestData' => [
             'MessageID' => Uuid::uuid1(),
             'MessagePrimaryContent' => [
-                'any' => ''
+                'any' => 'ANY content',
+                'another' => 'Another ANY content'
+            ],
+            'AttachmentContentList' => [
+                (object) ['id' => 1, 'content' => 'first attachment content'],
+                (object) ['id' => 2, 'content' => 'first attachment content'],
+                (object) ['id' => 3, 'content' => 'first attachment content'],
             ]
         ]
     ]);
@@ -41,6 +46,5 @@ try {
     '</xmp><br/><br/> Error Message : <br/>',
     $fault->getMessage(),
     '</xmp><br/><br/> Response : <br/>',
-
     $client->__getLastResponse();
 }
