@@ -80,7 +80,11 @@ $xml = $blade->render('xml', [
     'MessagePrimaryContent' => [
         (object)['name' => 'any', 'content' => 'Any content'],
     ],
-    'AttachmentContentList' => null
+    'AttachmentContentList' => [
+        (object) ['id' => 1, 'content' => 'first attachment content'],
+        (object) ['id' => 2, 'content' => 'first attachment content'],
+        (object) ['id' => 3, 'content' => 'first attachment content'],
+    ]
 ]);
 
 file_put_contents('output/xml' . time() . '.xml', $xml);

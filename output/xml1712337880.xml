@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope 
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+    xmlns:ns1="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/1.2" 
+    xmlns:ns2="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/basic/1.2">
+    <SOAP-ENV:Body>
+        <ns1:SendRequestRequest>
+
+            
+            <ns1:SenderProvidedRequestData>
+                <ns1:MessageID>62715702-f371-11ee-b261-784f4398f416</ns1:MessageID>
+                
+                    
+                    <ns2:MessagePrimaryContent>
+                                                    <any>
+                                Any content
+                            </any>
+                                            </ns2:MessagePrimaryContent>
+                                
+            </ns1:SenderProvidedRequestData>
+            
+            
+                        
+            <ns1:AttachmentContentList>
+                
+                    
+                    <ns1:AttachmentContent>
+                        <ns1:Id>1</ns1:Id>
+                        <ns1:Content>first attachment content</ns1:Content>
+                    </ns1:AttachmentContent>
+                    
+                    <ns1:AttachmentContent>
+                        <ns1:Id>2</ns1:Id>
+                        <ns1:Content>first attachment content</ns1:Content>
+                    </ns1:AttachmentContent>
+                    
+                    <ns1:AttachmentContent>
+                        <ns1:Id>3</ns1:Id>
+                        <ns1:Content>first attachment content</ns1:Content>
+                    </ns1:AttachmentContent>
+                                
+            </ns1:AttachmentContentList>
+            
+                    </ns1:SendRequestRequest>
+
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
