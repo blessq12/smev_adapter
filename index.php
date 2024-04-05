@@ -24,6 +24,8 @@ spl_autoload_register(function ($class_name) {
 
 $blade = new Blade('views', 'cache');
 
+// some
+
 // $client = SmevClientFactory::factory('http://smev3-n0.test.gosuslugi.ru:7500/smev/v1.2/ws?wsdl');
 // $client = new SoapClient('http://smev3-n0.test.gosuslugi.ru:7500/smev/v1.2/ws?wsdl', ['trace' => true]);
 // try {
